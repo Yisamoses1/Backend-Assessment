@@ -1,0 +1,7 @@
+@proto=./proto/user.proto
+@server=localhost:50055
+
+UserService.CreateUser {
+  "email": "test@example.com",
+  "name": "Rasaq"
+}
