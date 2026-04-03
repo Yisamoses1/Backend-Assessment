@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/gateway-service",
+    "outDir": "../../dist/gateway-service"
   },
   "include": ["src/**/*", "../../packages/**/*"]
 }

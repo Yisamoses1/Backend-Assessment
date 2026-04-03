@@ -4,31 +4,31 @@
   "projects": {
     "wallet-service": {
       "type": "application",
-      "root": "wallet-service",
+      "root": "apps/wallet-service",
       "entryFile": "main",
-      "sourceRoot": "wallet-service/src",
+      "sourceRoot": "apps/wallet-service/src",
       "compilerOptions": {
-        "tsConfigPath": "wallet-service/tsconfig.json",
+        "tsConfigPath": "apps/wallet-service/tsconfig.json",
         "outputPath": "dist/wallet-service"
       }
     },
     "user-service": {
       "type": "application",
-      "root": "user-service",
+      "root": "apps/user-service",
       "entryFile": "main",
-      "sourceRoot": "user-service/src",
+      "sourceRoot": "apps/user-service/src",
       "compilerOptions": {
-        "tsConfigPath": "user-service/tsconfig.json",
+        "tsConfigPath": "apps/user-service/tsconfig.json",
         "outputPath": "dist/user-service"
       }
     },
     "gateway-service": {
       "type": "application",
-      "root": "gateway-service",
+      "root": "apps/gateway-service",
       "entryFile": "main",
-      "sourceRoot": "gateway-service/src",
+      "sourceRoot": "apps/gateway-service/src",
       "compilerOptions": {
-        "tsConfigPath": "gateway-service/tsconfig.json",
+        "tsConfigPath": "apps/gateway-service/tsconfig.json",
         "outputPath": "dist/gateway-service"
       }
     }

@@ -15,7 +15,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "user": "nest start user-service --watch",
-    "gateway": "nest start api-gateway --watch",
+    "gateway": "nest start gateway-service --watch",
     "start:user-service:prod": "node dist/apps/user-service/main.js",
     "start:wallet-service:prod": "node dist/apps/wallet-service/main.js",
     "start:gateway-service:prod": "node dist/apps/gateway-service/main.js",
