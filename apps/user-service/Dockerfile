@@ -8,6 +8,9 @@ COPY tsconfig*.json ./
 COPY packages/ ./packages/
 COPY apps/user-service/ ./apps/user-service/
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 RUN npm install --include=dev
 RUN npx prisma generate --config=./packages/prisma/prisma.config.ts
 RUN npm run build user-service

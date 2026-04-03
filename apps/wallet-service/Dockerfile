@@ -8,6 +8,9 @@ COPY tsconfig*.json ./
 COPY packages/ ./packages/
 COPY apps/wallet-service/ ./apps/wallet-service/
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 RUN npm install --include=dev
 RUN npx prisma generate --config=./packages/prisma/prisma.config.ts
 RUN npm run build wallet-service
