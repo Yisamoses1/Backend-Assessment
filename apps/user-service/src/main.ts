@@ -1,7 +1,7 @@
 import { ReflectionService } from '@grpc/reflection'
 import { NestFactory } from '@nestjs/core'
 import { MicroserviceOptions, Transport } from '@nestjs/microservices'
-import { AppModule } from './src/app.module'
+import { AppModule } from './app.module'
 import { join } from 'path'
 import { Logger } from 'nestjs-pino'
 

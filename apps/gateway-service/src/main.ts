@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import { NestFactory } from '@nestjs/core'
-import { AppModule } from './src/app.module'
+import { AppModule } from './app.module'
 import { Logger } from 'nestjs-pino'
 
 async function bootstrap() {
