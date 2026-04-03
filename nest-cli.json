@@ -26,7 +26,7 @@
         "outputPath": "dist/apps/wallet-service"
       }
     },
-    "api-gateway": {
+    "gateway-service": {
       "type": "application",
       "root": "apps/gateway-service",
       "entryFile": "main",
