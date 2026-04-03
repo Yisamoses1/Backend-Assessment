@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/wallet-service"
+    "outDir": "../../apps/dist/wallet-service"
   },
   "include": ["src/**/*", "../../packages/**/*"]
 }
