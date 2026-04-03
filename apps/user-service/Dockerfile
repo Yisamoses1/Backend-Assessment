@@ -1,5 +1,8 @@
 FROM node:22-alpine
 
+# Force cache bust
+RUN echo "node22"
+
 WORKDIR /app
 
 COPY package*.json ./
