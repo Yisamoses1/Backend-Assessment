@@ -13,6 +13,6 @@ COPY . .
 
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
 RUN npm run build:wallet-service
-RUN ls -R dist/apps/wallet-service
+RUN echo "=== Build output ===" && ls -R dist
 
-CMD ["node", "dist/apps/wallet-service/main.js"]
+CMD ["ls", "-R", "dist/apps/wallet-service"]
