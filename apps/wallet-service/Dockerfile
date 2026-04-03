@@ -13,6 +13,6 @@ ENV DATABASE_URL=$DATABASE_URL
 
 RUN npm install --include=dev
 RUN npx prisma generate --config=./packages/prisma/prisma.config.ts
-RUN npm run build wallet-service
+RUN npm run build:wallet-service
 
-CMD ["sh", "-c", "npx prisma migrate deploy --config=./packages/prisma/prisma.migrate.config.ts && node dist/apps/wallet-service/main"]
+CMD ["sh", "-c", "npx prisma migrate deploy --config=./packages/prisma/prisma.migrate.config.ts && node dist/apps/wallet-service/main.js"]
