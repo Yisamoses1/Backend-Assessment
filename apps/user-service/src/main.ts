@@ -11,7 +11,7 @@ async function bootstrap() {
     options: {
       package: 'user',
       protoPath: join(process.cwd(), 'packages/proto/user.proto'),
-      url: '0.0.0.0:50055',
+      url: process.env.USER_SERVICE_URL,
       onLoadPackageDefinition: (pkg, server) => {
         new ReflectionService(pkg).addToServer(server)
       },

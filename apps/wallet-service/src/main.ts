@@ -11,7 +11,7 @@ async function bootstrap() {
     options: {
       package: 'wallet',
       protoPath: join(process.cwd(), 'packages/proto/wallet.proto'),
-      url: '0.0.0.0:50056',
+      url: process.env.WALLET_SERVICE_URL,
       onLoadPackageDefinition: (pkg, server) => {
         new ReflectionService(pkg).addToServer(server)
       },

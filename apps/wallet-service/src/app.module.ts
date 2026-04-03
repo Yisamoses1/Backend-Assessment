@@ -21,7 +21,7 @@ import { join } from 'path'
         options: {
           package: 'user',
           protoPath: join(process.cwd(), 'packages/proto/user.proto'),
-          url: 'localhost:50051',
+          url: process.env.USER_SERVICE_URL,
         },
       },
     ]),
