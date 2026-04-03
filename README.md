@@ -10,7 +10,8 @@ A monorepo containing two NestJS microservices communicating via gRPC, backed by
 backend-assessment/
 ├── apps/
 │   ├── user-service/       # Manages users — gRPC on port 50055
-│   └── wallet-service/     # Manages wallets — gRPC on port 50056
+│   ├── wallet-service/     # Manages wallets — gRPC on port 50056
+│   └── gateway-service/    # REST API Gateway — HTTP on port 5000
 ├── packages/
 │   ├── proto/              # Shared .proto files
 │   │   ├── user.proto
@@ -70,7 +71,12 @@ npm run user ( on the root folder)
 npm run wallet ( on the root folder)
 ```
 
-> Start User Service first — Wallet Service connects to it on startup.
+###   Gateway Service
+```bash
+npm run gateway (on the root folder)
+```
+
+> Start User and Wallet services first before starting the gateway.
 
 ---
 
@@ -112,6 +118,20 @@ grpcurl -plaintext -d '{"userId": "<user-id>", "amount": 1000}' \
   localhost:50056 wallet.WalletService/DebitWallet
 ```
 
+
+## REST Endpoints (via Gateway)
+
+All requests go through `http://localhost:5000`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | /users | Create a user |
+| GET | /users/:id | Get user by ID |
+| POST | /wallets | Create a wallet |
+| GET | /wallets/:userId | Get wallet |
+| POST | /wallets/credit | Credit wallet |
+| POST | /wallets/debit | Debit wallet |
+
 ---
 
 ## Features Implemented
@@ -120,6 +140,7 @@ grpcurl -plaintext -d '{"userId": "<user-id>", "amount": 1000}' \
 - User Service with `CreateUser` and `GetUserById` gRPC endpoints
 - Wallet Service with `CreateWallet`, `GetWallet`, `CreditWallet`, `DebitWallet` gRPC endpoints
 - Inter-service gRPC communication — Wallet verifies user exists before wallet creation
+- REST gateway service that forwards HTTP requests to gRPC services, only publicly exposed service
 
 ### Bonus
 - **Prisma `$transaction`** — DebitWallet uses an atomic transaction to check balance and debit safely
