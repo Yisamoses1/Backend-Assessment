@@ -8,7 +8,7 @@ COPY tsconfig*.json ./
 COPY packages/ ./packages/
 COPY apps/gateway-service/ ./apps/gateway-service/
 
-RUN npm install
+RUN npm install --include=dev
 RUN npm run build gateway-service
 
 CMD ["node", "dist/apps/gateway-service/main"]
