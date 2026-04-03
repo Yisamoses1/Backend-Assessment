@@ -3,5 +3,5 @@
   "compilerOptions": {
     "outDir": "../../dist/apps/wallet-service"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../../packages/**/*"]
 }

@@ -5,10 +5,10 @@ WORKDIR /app
 COPY package*.json ./
 COPY nest-cli.json ./
 COPY tsconfig*.json ./
-COPY packages/ ./packages/
-COPY apps/wallet-service/ ./apps/wallet-service/
-
 RUN npm install --include=dev
+
+COPY . .
+
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
 RUN npm run build:wallet-service
 
