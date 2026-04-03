@@ -6,10 +6,10 @@ COPY package*.json ./
 COPY nest-cli.json ./
 COPY tsconfig*.json ./
 COPY packages/ ./packages/
-COPY apps/wallet-service/ ./apps/wallet-service/
+COPY apps/user-service/ ./apps/user-service/
 
 RUN npm install
-RUN npx prisma generate --schema=./packages/prisma/schema.prisma
-RUN npm run build wallet-service
+RUN npx prisma generate --config=./packages/prisma/prisma.config.ts
+RUN npm run build user-service
 
-CMD ["node", "dist/apps/wallet-service/main"]
+CMD ["sh", "-c", "npx prisma migrate deploy --config=./packages/prisma/prisma.config.ts && node dist/apps/user-service/main"]
