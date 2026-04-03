@@ -11,4 +11,4 @@ COPY . .
 
 RUN npm run build:gateway-service
 
-CMD ["node", "dist/apps/gateway-service/main.js"]
+CMD ["node", "dist/gateway-service/main.js"]

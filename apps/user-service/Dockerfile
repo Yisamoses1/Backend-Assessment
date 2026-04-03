@@ -12,4 +12,4 @@ COPY . .
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
 RUN npm run build:user-service
 
-CMD ["node", "dist/apps/user-service/main.js"]
+CMD ["node", "dist/user-service/main.js"]
