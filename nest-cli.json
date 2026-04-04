@@ -9,7 +9,7 @@
       "sourceRoot": "apps/wallet-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/wallet-service/tsconfig.json",
-        "outputPath": "apps/dist/wallet-service"
+        "outputPath": "dist/apps/wallet-service"
       }
     },
     "user-service": {
@@ -19,7 +19,7 @@
       "sourceRoot": "apps/user-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/user-service/tsconfig.json",
-        "outputPath": "apps/dist/user-service"
+        "outputPath": "dist/apps/user-service"
       }
     },
     "gateway-service": {
@@ -29,7 +29,7 @@
       "sourceRoot": "apps/gateway-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/gateway-service/tsconfig.json",
-        "outputPath": "apps/dist/gateway-service"
+        "outputPath": "dist/apps/gateway-service"
       }
     }
   }
