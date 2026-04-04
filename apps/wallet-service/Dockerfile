@@ -11,5 +11,6 @@ COPY . .
 
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
 RUN npm run build:wallet-service
+RUN find /app/dist -name "main.js" 2>/dev/null || echo "No main.js found in dist"
 
 CMD ["sh", "-c", "npx prisma migrate deploy --config=./packages/prisma/prisma.config.ts && node dist/apps/wallet-service/main.js"]
