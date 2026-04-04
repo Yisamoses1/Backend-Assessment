@@ -11,4 +11,4 @@ COPY . .
 
 RUN npm run build:gateway-service && find /app/dist -name "main.js"
 
-CMD ["node", "dist/apps/gateway-service/src/main.js"]
+CMD ["node", "dist/apps/gateway-service/apps/gateway-service/src/main.js"]
