@@ -3,5 +3,5 @@
   "compilerOptions": {
     "outDir": "../../dist/apps/gateway-service"
   },
-  "include": ["src/**/*", "../../packages/**/*"]
+  "include": ["src/**/*"]
 }
