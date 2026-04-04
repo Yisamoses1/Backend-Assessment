@@ -10,7 +10,7 @@ RUN npm install --include=dev
 COPY . .
 
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
-RUN npm run build:user-service
+RUN npm run build:user-service && find /app/dist -name "main.js"
 RUN find /app/dist -name "main.js" 2>/dev/null || echo "No main.js found in dist"
 
 CMD ["sh", "-c", "npx prisma migrate deploy --config=./packages/prisma/prisma.config.ts && node dist/apps/user-service/src/main.js"]
