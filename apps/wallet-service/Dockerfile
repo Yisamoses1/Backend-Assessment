@@ -12,4 +12,4 @@ COPY . .
 RUN npx prisma generate --schema=./packages/prisma/schema.prisma
 RUN npm run build:wallet-service
 
-CMD ["node", "apps/dist/wallet-service/main.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy --schema=./packages/prisma/schema.prisma && node dist/apps/wallet-service/main.js"]
