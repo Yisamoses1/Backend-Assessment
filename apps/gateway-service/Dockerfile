@@ -9,6 +9,6 @@ RUN npm install --include=dev
 
 COPY . .
 
-RUN npm run build:gateway-service && find /app/dist -name "main.js"
+RUN npm run build:gateway-service
 
 CMD ["node", "dist/apps/gateway-service/apps/gateway-service/src/main.js"]
